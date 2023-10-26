@@ -2,12 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
-
+import Navigate from './components/Navigate';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
-    // <Register/>
-    <Login/>
+    <BrowserRouter>
+    <Navigate/>
+    <Routes>
+      <Route path='/login' element={<Login/>}></Route>
+      <Route path='/register' element={<Register/>}></Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
